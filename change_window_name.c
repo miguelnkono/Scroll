@@ -4,8 +4,8 @@
 
 /**
  * @brief Function to retrieve and change the name of file in a subdirectory. It does that only if the window is visible.
- * @param ChildHandle 
- * @param lPar 
+ * @param ChildHandle
+ * @param lPar
  * @return Boolean value.
  */
 BOOL CALLBACK EnumChild(HWND ChildHandle, LPARAM lPar)
@@ -14,11 +14,11 @@ BOOL CALLBACK EnumChild(HWND ChildHandle, LPARAM lPar)
     char *WinText;
 
     // Get the length of a window's title.
-    if(!(WinLen = GetWindowTextLengthA(ChildHandle)))
+    if (!(WinLen = GetWindowTextLengthA(ChildHandle)))
         return 1;
 
     // Checking to see the windos is visible.
-    if(!(IsWindowVisible(ChildHandle)))
+    if (!(IsWindowVisible(ChildHandle)))
         return 1;
 
     // Printing the length of the window.
@@ -42,9 +42,9 @@ BOOL CALLBACK EnumChild(HWND ChildHandle, LPARAM lPar)
 
 /**
  * @brief Function to retrieve and change the title of a window, checking for visibility before changing the name.
- * @param WinHandle 
- * @param lPar 
- * @return 
+ * @param WinHandle
+ * @param lPar
+ * @return
  */
 BOOL CALLBACK EnWinProc(HWND WinHandle, LPARAM lPar)
 {
@@ -52,11 +52,11 @@ BOOL CALLBACK EnWinProc(HWND WinHandle, LPARAM lPar)
     char *WinText;
 
     // Obtaining the length the windows title.
-    if(!(WinLen = GetWindowTextLengthA(WinHandle)))
+    if (!(WinLen = GetWindowTextLengthA(WinHandle)))
         return 1;
 
     // Checking to see if the windows is visible or not.
-    if(!(IsWindowVisible(WinHandle)))
+    if (!(IsWindowVisible(WinHandle)))
         return 1;
 
     // Printing the length of the windows title.
@@ -94,7 +94,6 @@ int main()
         EnumWindows(&EnWinProc, 0);
         Sleep(500);
     }
-    
 
     return 0;
 }
