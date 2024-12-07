@@ -1,0 +1,11 @@
+To change name of every window in windows : 
+[1] Find every window handle :
+    - EnumWindows(...)    -> it enumerates all top level window
+[2] Create callback function : 
+    - {for every window operations}
+[3] Only visible windows : 
+    - IsWindowVisible(...)
+[4] Child windows : 
+    - EnumChildWindows(...)
+[5] Changing window name : 
+    - SetWindowText(...)
